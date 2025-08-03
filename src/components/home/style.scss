@@ -1,4 +1,86 @@
+// .hero-container {
+//  height: 100vh;
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  justify-content: center;
+//  text-align: center;
+//  padding: 0 1rem;
+
+//  .hero-text {
+//    font-family: 'Rubik Mono One', sans-serif;
+//    font-size: clamp(2.5rem, 8vw, 8rem); // responsive font-size
+//    color: #6f41ff;
+//    text-shadow: 2px 2px 0 #b8a4ff;
+//    transition: transform 0.1s ease-out;
+//    cursor: default;
+//    user-select: none;
+//    position: relative;
+
+//    &:hover {
+//      cursor: pointer;
+
+//      + .hero-subtext {
+//        opacity: 1;
+//        animation: typing 5s steps(40, end), blink 0.75s step-end infinite;
+//      }
+//    }
+//  }
+
+//  .hero-subtext {
+//    font-family: monospace;
+//    font-size: clamp(1rem, 3vw, 1.5rem); // responsive
+//    color: #000000;
+//    margin-top: 20px;
+//    white-space: nowrap;
+//    overflow: hidden;
+//    border-right: 3px solid #fff;
+//    width: 0;
+//    opacity: 0;
+//  }
+
+//  @keyframes typing {
+//    from {
+//      width: 0;
+//    }
+//    to {
+//      width: 100%;
+//    }
+//  }
+
+//  @keyframes blink {
+//    50% {
+//      border-color: transparent;
+//    }
+//  }
+
+//  // Optional breakpoints for more control
+//  @media (max-width: 768px) {
+//    .hero-text {
+//      font-size: 6vw;
+//    }
+
+//    .hero-subtext {
+//      font-size: 1.2rem;
+//    }
+//  }
+
+//  @media (max-width: 480px) {
+//    .hero-text {
+//      font-size: 5vw;
+//    }
+
+//    .hero-subtext {
+//      font-size: 1rem;
+//    }
+//  }
+// }
+/* style.scss */
+
+/* Hero container styles */
 .hero-container {
+ position: relative;
+ width: 100vw;
  height: 100vh;
  display: flex;
  flex-direction: column;
@@ -6,72 +88,127 @@
  justify-content: center;
  text-align: center;
  padding: 0 1rem;
+ overflow: hidden;
+ // background-color: #333333; /* Dark background for contrast with red particles */
+}
 
+/* Particle container styles */
+.particle-container {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+ z-index: -1;
+ background-color: transparent; /* Ensure particles are visible */
+}
+
+/* Particle layer (where SVG particles are rendered) */
+.particle-layer {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ pointer-events: none;
+ z-index: 0;
+}
+
+/* Particle content (for children elements) */
+.particle-content {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 10;
+}
+
+/* Particle filter (SVG filter for gooey effect) */
+.particle-filter {
+ position: absolute;
+ width: 0;
+ height: 0;
+ z-index: 0;
+}
+
+/* Hero text styles */
+.hero-text {
+ font-family: 'Rubik Mono One', sans-serif;
+ font-size: clamp(2.5rem, 8vw, 8rem);
+ color: #6f41ff;
+ text-shadow: 2px 2px 0 #b8a4ff;
+ transition: transform 0.1s ease-out;
+ cursor: default;
+ user-select: none;
+ position: relative;
+ z-index: 10;
+}
+
+/* Hero subtext styles */
+.hero-subtext {
+ font-family: monospace;
+ font-size: clamp(1rem, 3vw, 1.5rem);
+ color: #353434; /* Changed to white for better contrast on dark background */
+ margin-top: 20px;
+ white-space: nowrap;
+ overflow: hidden;
+ border-right: 3px solid #fff;
+ width: 0;
+ opacity: 0;
+ z-index: 10;
+ transition: opacity 0.3s ease;
+}
+
+/* Hover state managed by JavaScript */
+.hero-text:hover + .hero-subtext,
+.hero-subtext.active {
+ opacity: 1;
+ animation: typing 5s steps(40, end), blink 0.75s step-end infinite;
+}
+
+/* CurvedLoop styles */
+.custom-text-style {
+ z-index: 10;
+}
+
+/* Animations */
+@keyframes typing {
+ from {
+   width: 0;
+ }
+ to {
+   width: 100%;
+ }
+}
+
+@keyframes blink {
+ 50% {
+   border-color: transparent;
+ }
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
  .hero-text {
-   font-family: 'Rubik Mono One', sans-serif;
-   font-size: clamp(2.5rem, 8vw, 8rem); // responsive font-size
-   color: #6f41ff;
-   text-shadow: 2px 2px 0 #b8a4ff;
-   transition: transform 0.1s ease-out;
-   cursor: default;
-   user-select: none;
-   position: relative;
-
-   &:hover {
-     cursor: pointer;
-
-     + .hero-subtext {
-       opacity: 1;
-       animation: typing 5s steps(40, end), blink 0.75s step-end infinite;
-     }
-   }
+   font-size: 6vw;
  }
 
  .hero-subtext {
-   font-family: monospace;
-   font-size: clamp(1rem, 3vw, 1.5rem); // responsive
-   color: #000000;
-   margin-top: 20px;
-   white-space: nowrap;
-   overflow: hidden;
-   border-right: 3px solid #fff;
-   width: 0;
-   opacity: 0;
+   font-size: 1.2rem;
+ }
+}
+
+@media (max-width: 480px) {
+ .hero-text {
+   font-size: 5vw;
  }
 
- @keyframes typing {
-   from {
-     width: 0;
-   }
-   to {
-     width: 100%;
-   }
- }
-
- @keyframes blink {
-   50% {
-     border-color: transparent;
-   }
- }
-
- // Optional breakpoints for more control
- @media (max-width: 768px) {
-   .hero-text {
-     font-size: 6vw;
-   }
-
-   .hero-subtext {
-     font-size: 1.2rem;
-   }
- }
-
- @media (max-width: 480px) {
-   .hero-text {
-     font-size: 5vw;
-   }
-
-   .hero-subtext {
-     font-size: 1rem;
-   }
+ .hero-subtext {
+   font-size: 1rem;
  }
 }
