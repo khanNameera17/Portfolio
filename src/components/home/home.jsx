@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "./style.scss";
-import CurvedLoop from "./curvedLoop";
+import CurvedLoop from "./background/curvedLoop/curvedLoop";
 import AnimatedBubbleParticles from "./background";
 
 
@@ -32,31 +32,35 @@ const Hero = () => {
         className="particle-background"
       />
 
-      <CurvedLoop
+      {/* <CurvedLoop
         marqueeText="This ✦ Website ✦ Is ✦ Under ✦ Construction !"
         speed={2}
         curveAmount={200}
         direction="left"
         interactive={true}
         className="custom-text-style"
-      />
+      /> */}
 
       <h1
         className="hero-text"
         style={{
           transform: `rotateX(${transform.y}deg) rotateY(${transform.x}deg)`,
         }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        // onMouseEnter={() => setHovered(true)}
+        // onMouseLeave={() => setHovered(false)}
       >
         White-Cinette
       </h1>
 
-      {hovered && (
+      {/* {hovered && (
         <p className={`hero-subtext ${hovered ? "active" : ""}`}>
           We are a creative tech company building 3D, AI & immersive experiences.
         </p>
-      )}
+      )} */}
+      <p className="hero-subtext active">
+  We are a creative tech company building 3D, AI & immersive experiences.
+</p>
+
     </div>
   );
 };

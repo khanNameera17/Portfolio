@@ -52,7 +52,9 @@ const AnimatedBubbleParticles = ({
     }
 
     const x = Math.random() * dimensions.width;
-    const y = dimensions.height + 100;
+    // const y = dimensions.height + 100;
+    const y = dimensions.height - Math.random() * 20; // 👌 Spawns inside screen, at bottom edge
+
     const steps = dimensions.height / 2;
     const frictionValue = friction.min + Math.random() * (friction.max - friction.min);
     const scale = scaleRange.min + Math.random() * (scaleRange.max - scaleRange.min);

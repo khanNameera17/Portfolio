@@ -153,23 +153,22 @@
 .hero-subtext {
  font-family: monospace;
  font-size: clamp(1rem, 3vw, 1.5rem);
- color: #353434; /* Changed to white for better contrast on dark background */
+ color: #353434;
  margin-top: 20px;
  white-space: nowrap;
  overflow: hidden;
  border-right: 3px solid #fff;
- width: 0;
+ width: 0; /* starting point */
  opacity: 0;
  z-index: 10;
  transition: opacity 0.3s ease;
+
+ &.active {
+   opacity: 1;
+   animation: typing 4s steps(40, end) forwards, blink 0.75s step-end 6; // 6 blinks only
+ }
 }
 
-/* Hover state managed by JavaScript */
-.hero-text:hover + .hero-subtext,
-.hero-subtext.active {
- opacity: 1;
- animation: typing 5s steps(40, end), blink 0.75s step-end infinite;
-}
 
 /* CurvedLoop styles */
 .custom-text-style {
