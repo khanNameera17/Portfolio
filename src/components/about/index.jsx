@@ -13,13 +13,13 @@ const About = () => {
     let sections = gsap.utils.toArray(".card");
 
     gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
+      xPercent: -100 * (sections.length - 2),
       ease: "none",
       scrollTrigger: {
         trigger: scrollRef.current,
         pin: true,
         scrub: 1,
-        snap: 1 / (sections.length - 1),
+        snap: 1 / (sections.length - 2),
         end: () => "+=" + scrollRef.current.offsetWidth,
       },
     });
