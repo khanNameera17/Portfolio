@@ -1,24 +1,74 @@
-.about-container {
- min-height: 100vh;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- text-align: center;
- background-color: #ffffff;
- padding: 60px 20px;
+body {
+ font-family: "Signika Negative", sans-serif;
+ font-weight: 300;
+ margin: 0;
+ padding: 0;
+ overflow-x: hidden;
+}
 
- h2 {
-   font-size: 3rem;
-   font-weight: bold;
-   color: #000000;
-   margin-bottom: 20px;
+.scrolling-wrapper {
+ display: flex;
+ flex-wrap: nowrap;
+ width: 100vw;
+ height: 100vh;
+ overflow: hidden;
+ position: relative;
+}
+
+.card {
+ width: 90%;
+ flex: 0 0 100vw;
+ height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+ font-size: 2.5rem;
+ padding: 2rem;
+ text-align: center;
+ box-sizing: border-box;
+
+ &:nth-child(1) {
+   background-color: #1e3a8a; // About Us - Indigo
  }
 
- p {
-   font-size: 1.5rem;
-   color: #000000;
-   max-width: 800px;
-   line-height: 1.6;
+ &:nth-child(2) {
+   background-color: #047857; // Our Vision - Emerald
+ }
+
+ &:nth-child(3) {
+   background-color: #9d174d; // Team - Rose
+ }
+
+ &:nth-child(4) {
+   background-color: #7c3aed; // Why Choose Us - Violet
+ }
+
+ h2 {
+   margin: 0;
+   font-size: 2.5rem;
+
+   @media (max-width: 768px) {
+     font-size: 2rem;
+   }
+
+   @media (max-width: 480px) {
+     font-size: 1.6rem;
+   }
+ }
+}
+
+// Responsive padding & font scaling
+@media (max-width: 768px) {
+ .card {
+   padding: 1.5rem;
+   font-size: 2rem;
+ }
+}
+
+@media (max-width: 480px) {
+ .card {
+   padding: 1rem;
+   font-size: 1.6rem;
  }
 }
