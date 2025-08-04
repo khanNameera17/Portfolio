@@ -32,14 +32,14 @@ const Hero = () => {
         className="particle-background"
       />
 
-      {/* <CurvedLoop
+      <CurvedLoop
         marqueeText="This ✦ Website ✦ Is ✦ Under ✦ Construction !"
         speed={2}
         curveAmount={200}
         direction="left"
         interactive={true}
         className="custom-text-style"
-      /> */}
+      />
 
       <h1
         className="hero-text"
