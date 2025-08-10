@@ -21,32 +21,41 @@ body {
  height: 100vh;
  display: flex;
  align-items: center;
- justify-content: center;
+ // justify-content: center;
  color: white;
  font-size: 2.5rem;
  padding: 2rem;
  text-align: center;
  box-sizing: border-box;
+ p {
+  font-size: 1.5rem; // smaller paragraph text
+  font-weight: 400;
+  line-height: 1.5;
+  margin-left: 1rem; // space between h2 and paragraph
+  text-align: left;
+}
+&:nth-child(1) {
+ background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d");
+}
 
- &:nth-child(1) {
-   background-color: #1e3a8a; // About Us - Indigo
- }
+&:nth-child(2) {
+ background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+}
 
- &:nth-child(2) {
-   background-color: #047857; // Our Vision - Emerald
- }
+&:nth-child(3) {
+ background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+}
 
- &:nth-child(3) {
-   background-color: #9d174d; // Team - Rose
- }
-
- &:nth-child(4) {
-   background-color: #7c3aed; // Why Choose Us - Violet
- }
+&:nth-child(4) {
+ background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216");
+}
 
  h2 {
    margin: 0;
+   writing-mode: vertical-rl;
+   transform: rotate(180deg);
    font-size: 2.5rem;
+  
 
    @media (max-width: 768px) {
      font-size: 2rem;
