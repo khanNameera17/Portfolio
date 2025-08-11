@@ -10,7 +10,7 @@ import Services from "@/components/services";
 export default function Home() {
   return (
     <>
-      <section id="#">
+      <section id="home">
         <Hero />
       </section>
 
