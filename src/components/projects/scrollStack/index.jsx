@@ -64,7 +64,7 @@ export default function ScrollStackProjects({ projects = defaultProjects }) {
   return (
     <section
       className="scrollStackContainer"
-      style={{ height: `${projects.length * 50}vh` }}
+      style={{ height: `${projects.length * 40}vh` }}
       ref={containerRef}
     >
       {projects.map((p, i) => (
