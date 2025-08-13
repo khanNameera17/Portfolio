@@ -11,51 +11,41 @@ body {
  flex-wrap: nowrap;
  width: 100vw;
  height: 100vh;
- overflow: hidden;
+ overflow-x: auto;  // changed to auto for better UX on small devices
+ scroll-snap-type: x mandatory; // enable snapping
+ -webkit-overflow-scrolling: touch; // smooth scrolling on iOS
  position: relative;
+ scroll-behavior: smooth;
 }
 
 .card {
- width: 100%;
  flex: 0 0 50vw;
  height: 100vh;
  display: flex;
  align-items: center;
- // justify-content: center;
+ padding: 2rem;
  color: white;
  font-size: 2.5rem;
- padding: 2rem;
  text-align: center;
  box-sizing: border-box;
+ scroll-snap-align: start;
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+
  p {
-  font-size: 1.5rem; // smaller paragraph text
-  font-weight: 400;
-  line-height: 1.5;
-  margin-left: 1rem; // space between h2 and paragraph
-  text-align: left;
-}
-&:nth-child(1) {
- background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d");
-}
-
-&:nth-child(2) {
- background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
-}
-
-&:nth-child(3) {
- background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
-}
-
-&:nth-child(4) {
- background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216");
-}
+   font-size: 1.5rem;
+   font-weight: 400;
+   line-height: 1.5;
+   margin-left: 1rem;
+   text-align: left;
+ }
 
  h2 {
    margin: 0;
    writing-mode: vertical-rl;
    transform: rotate(180deg);
    font-size: 2.5rem;
-  
 
    @media (max-width: 768px) {
      font-size: 2rem;
@@ -65,19 +55,50 @@ body {
      font-size: 1.6rem;
    }
  }
+
+ &:nth-child(1) {
+   background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d");
+ }
+
+ &:nth-child(2) {
+   background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+ }
+
+ &:nth-child(3) {
+   background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+ }
+
+ &:nth-child(4) {
+   background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216");
+ }
 }
 
-// Responsive padding & font scaling
-@media (max-width: 768px) {
+/* Responsive padding & font scaling */
+@media (max-width: 1024px) {
  .card {
+   flex: 0 0 70vw; /* bigger cards on tablet */
    padding: 1.5rem;
    font-size: 2rem;
  }
 }
 
+@media (max-width: 768px) {
+ .card {
+   flex: 0 0 85vw; /* almost full width on smaller tablets */
+   padding: 1.2rem;
+   font-size: 1.8rem;
+ }
+}
+
 @media (max-width: 480px) {
  .card {
+   flex: 0 0 100vw; /* full width on mobiles */
    padding: 1rem;
-   font-size: 1.6rem;
+   font-size: 1.4rem;
+
+   p {
+     font-size: 1rem;
+     margin-left: 0.5rem;
+   }
  }
 }
