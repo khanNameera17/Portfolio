@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">TWC</div>
+      <div className="logo">ALT</div>
 
       <button className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <span />

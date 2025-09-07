@@ -30,7 +30,7 @@ const About = () => {
       <div className="card">
         <h2>About Us</h2>
         <p>
-          White Cinette is a premier digital solutions studio crafting elegant,
+          Alphora tech is a premier digital solutions studio crafting elegant,
           high-performance websites, mobile applications, and tailored
           marketing strategies. We partner with brands nationwide, blending
           innovation, design, and technology to transform visions into impactful
@@ -61,7 +61,7 @@ const About = () => {
       <div className="card">
         <h2>Why Choose Us</h2>
         <p>
-          Partnering with White Cinette means working with a dedicated team that
+          Partnering with Alphora tech means working with a dedicated team that
           understands your vision and works tirelessly to bring it to life. We
           combine cutting-edge technologies, user-centered design, and
           data-driven strategies to deliver lasting results.

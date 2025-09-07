@@ -49,7 +49,7 @@ const Hero = () => {
         // onMouseEnter={() => setHovered(true)}
         // onMouseLeave={() => setHovered(false)}
       >
-        White-Cinette
+        Alphora-Tech
       </h1>
 
       {/* {hovered && (

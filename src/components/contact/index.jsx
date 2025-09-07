@@ -17,7 +17,10 @@ const ContactSection = () => {
     <section className="contact-section">
       <div className="top-bar">
         <div className="left"></div>
-        <div className="center">White-Cinette @2025</div>
+        <div className="center">
+  Alphora-Tech &copy; {new Date().getFullYear()}
+</div>
+
         <div className="right"></div>
       </div>
 
