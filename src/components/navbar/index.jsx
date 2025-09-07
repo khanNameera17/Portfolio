@@ -1,11 +1,36 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './style.scss';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  // Listen for scroll and set active section
+  useEffect(() => {
+    const sections = ['home', 'about', 'projects', 'services', 'contact'];
+
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight / 2; // center of screen
+
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const top = element.offsetTop;
+          const bottom = top + element.offsetHeight;
+          if (scrollPos >= top && scrollPos < bottom) {
+            setActiveSection(section);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <nav className="navbar">
@@ -18,13 +43,21 @@ export default function Navbar() {
       </button>
 
       <ul className={`navLinks ${isOpen ? 'active' : ''}`}>
-        <li><a href="#home" className="nav-link">Home</a></li>
-        <li><a href="#about" className="nav-link">About</a></li>
-        <li><a href="#projects" className="nav-link">Projects</a></li>
-        <li><a href="#services" className="nav-link">Services</a></li>
+        {['home', 'about', 'projects', 'services'].map((section) => (
+          <li key={section}>
+            <a
+              href={`#${section}`}
+              className={`nav-link ${activeSection === section ? 'active' : ''}`}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </a>
+          </li>
+        ))}
       </ul>
 
-      <a href="#contact" className="contactBtn">Contact Us</a>
+      <a href="#contact" className={`contactBtn ${activeSection === 'contact' ? 'active' : ''}`}>
+        Contact Us
+      </a>
     </nav>
   );
 }
