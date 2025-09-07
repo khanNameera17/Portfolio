@@ -14,7 +14,7 @@ import Navbar from "@/components/navbar";
 // });
 
 export const metadata = {
-  title: "White-Cinette",
+  title: "Alphora-Tech",
   description: "Next.js Portfolio",
 };
 
