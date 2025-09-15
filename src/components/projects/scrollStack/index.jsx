@@ -9,24 +9,24 @@ gsap.registerPlugin(ScrollTrigger)
 
 const defaultProjects = [
   {
-    title: 'Analytics Dashboard',
+    title: 'HRMS Dashboard',
     description:
-      'A comprehensive data visualization tool that provides real-time analytics and insights for business metrics.',
-    tags: ['React', 'D3.js', 'Node.js'],
-    image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/be6b1ffd-10d1-462c-b987-f63063fbe85f.png'
+      'A comprehensive human resource management tool that provides real-time Attendance data and insights for business metrics.',
+    tags: ['React', 'Mongo DB', 'Node.js'],
+    image: '/assets/HRMS.png'
   },
   {
-    title: 'Fitness Tracker',
+    title: 'Hotel Booking',
     description:
-      'Mobile application that tracks workouts, nutrition, and provides personalized fitness recommendations.',
-    tags: ['React Native', 'Firebase', 'Redux'],
-    image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d07269ae-4948-4352-9c10-3c624803f9d1.png'
+      'A user-friendly hotel booking web application that allows customers to search, compare, and reserve rooms seamlessly.',
+    tags: ['Next', 'Mongo DB', 'Node.js'],
+    image: '/assets/Hotel-Booking.png'
   },
   {
     title: 'E-Commerce Platform',
     description:
       'Complete online shopping solution with product catalog, cart functionality, and payment integration.',
-    tags: ['Next.js', 'Stripe', 'MongoDB'],
+    tags: ['Wordpress'],
     image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fb6735c9-86b8-405f-ad40-0ad9b7967ff6.png'
   }
 ]
