@@ -24,7 +24,7 @@ const services = [
    icon: "💻",
  },
  {
-  title: "Framer",
+  title: "Branding",
   // bgColor: "blue", // soft purple
   icon: "💻",
 },
